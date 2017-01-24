@@ -12,7 +12,7 @@ import javax.ws.rs.core.Response;
 public class RestService {
 	@POST
     public Response helloWorld(String inputJson) {
-        return Response.noContent().entity("Hello World").build();
+        return Response.ok().entity("Hello World").build();
     }
 
     @GET
