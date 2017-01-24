@@ -8,8 +8,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.stavros.data.DataSingleton;
+
 @Path("/restservice")
 public class RestService {
+	
 	@POST
     public Response helloWorld(String inputJson) {
         return Response.ok().entity("Hello World").build();
@@ -19,7 +22,8 @@ public class RestService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
     public Response getMessage(@PathParam("id") String id) {
-        String output = "Jersey say Hello World!!! with id: " + id;
-        return Response.status(200).entity(output).build();
+        Long idLong = Long.parseLong(id);
+        return Response.status(200).entity(DataSingleton.getInstance().retrieve(idLong)).build();
     }
+    
 }
