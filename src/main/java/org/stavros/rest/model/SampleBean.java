@@ -9,6 +9,10 @@ public class SampleBean implements Serializable {
 	 */
 	private static final long serialVersionUID = -1949549422058014817L;
 
+	public SampleBean() {
+		
+	}
+	
 	public SampleBean(Long id, String name, SampleObject object) {
 		setId(id);
 		setName(name);

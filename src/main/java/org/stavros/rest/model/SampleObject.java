@@ -9,6 +9,10 @@ public class SampleObject implements Serializable {
 	 */
 	private static final long serialVersionUID = 7067345747625904840L;
 
+	public SampleObject() {
+		
+	}
+	
 	public SampleObject(Long id, String name, String description) {
 		setId(id);
 		setName(name);
